@@ -24,21 +24,12 @@ public class DayOne {
             "nine", 9,
             "zero", 0);
     public static void  main(String[] args) {
-        List<String> lines = readInputFile("resources/calibrationsfull.txt");
+        List<String> lines = FileUtils.readInputFile("resources/calibrationsfull.txt");
         int sum = sumOfCalibrationValues(lines);
         System.out.println("Sum of calibration values is " + sum);
     }
 
-    private static List<String> readInputFile(String filePath) {
-        Path currentWorkingDir = Paths.get(System.getProperty("user.dir"));
 
-        Path path = currentWorkingDir.resolve(filePath);
-        try {
-            return Files.readAllLines(path);
-        } catch (IOException ex) {
-            throw new RuntimeException("Could not read text file at " + path);
-        }
-    }
 
     private static int sumOfCalibrationValues(List<String> lines) {
         List<Integer> values = recoverCalibrationValues(lines);
