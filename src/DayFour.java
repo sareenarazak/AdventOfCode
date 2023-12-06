@@ -14,7 +14,7 @@ public class DayFour {
         List<String> lines = FileUtils.readInputFile("resources/scratchcards.txt");
         List<Card> cards = parseLinesToCards(lines);
         System.out.println("total points from scratch card is : " + calculateTotalPoints(cards));
-        System.out.println("total points from scratch card is : " + totalWonCards(cards));
+        System.out.println("total number of cards won is : " + totalWonCards(cards));
     }
 
     private static List<Card> parseLinesToCards(List<String> lines) {
