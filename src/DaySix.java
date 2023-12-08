@@ -18,8 +18,8 @@ public class DaySix {
 
     private static Long numOfWaysToWinAllRaces(Map<Long, Long> currentRecords) {
         return currentRecords.entrySet().stream()
-                .map(entry -> numOfWaysToWin(entry.getKey(), entry.getValue()))
-                .reduce(1L, (a, b) -> a * b);
+                .mapToLong(entry -> numOfWaysToWin(entry.getKey(), entry.getValue()))
+                .reduce(1L, Math::multiplyExact);
     }
 
     private static Long numOfWaysToWin(Long time, Long currentWinningDistance) {
