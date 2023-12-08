@@ -15,4 +15,14 @@ public final class FileUtils {
             throw new RuntimeException("Could not read text file at " + path);
         }
     }
+    public static String readFileToString(String filePath)  {
+        Path currentWorkingDir = Paths.get(System.getProperty("user.dir"));
+
+        Path path = currentWorkingDir.resolve(filePath);
+        try {
+            return new String(Files.readAllBytes(path));
+        } catch (IOException ex) {
+            throw new RuntimeException("Could not read text file at " + path);
+        }
+    }
 }
