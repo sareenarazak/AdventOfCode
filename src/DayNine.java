@@ -55,6 +55,7 @@ public class DayNine {
                 .mapToObj(i -> readings.get(i + 1) - readings.get(i))
                 .toList();
     }
+
     private static List<Integer> reverseImmutableList(List<Integer> immutableList) {
         List<Integer> copyOfImmutableList = new ArrayList<>(immutableList);
         Collections.reverse(copyOfImmutableList);
